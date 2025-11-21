@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: Products API
+  version: 1.0.0
+
+paths:
+  /products:
+    get:
+      summary: Get all products
+      description: Returns a list of products.
+      responses:
+        "200":
+          description: List of products
+          content:
+            application/json:
+              example:
+                - id: 1
+                  name: "Laptop"
+                  price: 1200
+                - id: 2
+                  name: "Phone"
+                  price: 800
+
+    post:
+      summary: Create a product
+      description: Adds a new product and returns it.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: "Headphones"
+              price: 199
+      responses:
+        "201":
+          description: Product created
+          content:
+            application/json:
+              example:
+                id: 3
+                name: "Headphones"
+                price: 199
